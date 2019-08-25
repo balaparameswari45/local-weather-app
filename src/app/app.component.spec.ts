@@ -1,16 +1,39 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { MatInputModule, MatFormFieldModule, MatCardModule, MatIconModule, MatButtonModule, MatToolbarModule } from '@angular/material';
+import { CitySearchComponent } from './citysearch/citysearch.component';
+import { CurrentWeatherComponent } from './current-weather/current-weather.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { WeatherService } from './weather/weather.service';
+import { WeatherServiceFake } from './weather/weather.service.fake';
+
+import {HttpClientTestingModule} from '@angular/common/http/testing'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatCardModule,
+        MatIconModule,
+        MatButtonModule,
+        MatToolbarModule, 
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        HttpClientTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        CitySearchComponent, 
+        CurrentWeatherComponent
+
       ],
+      providers: [{provide:WeatherService, useClass:WeatherServiceFake}],
     }).compileComponents();
   }));
 
