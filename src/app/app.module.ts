@@ -7,14 +7,14 @@ import { WeatherService} from './weather/weather.service'
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule, MatFormFieldModule, MatCardModule,MatIconModule,MatButtonModule,MatToolbarModule} from '@angular/material';
-import { CitysearchComponent } from './citysearch/citysearch.component';
+import { CitySearchComponent } from './citysearch/citysearch.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     CurrentWeatherComponent,
-    CitysearchComponent
+    CitySearchComponent
   ],
 
   imports: [

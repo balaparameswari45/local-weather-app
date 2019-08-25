@@ -1,13 +1,16 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>Localcast Weather</h1>
   <mat-toolbar color="primary">
     <span>Localcast Weather</span>
   </mat-toolbar>
-  <div>Your City, Your Forecast, right now!</div>
-  <div><app-citysearch></app-citysearch></div>
+  <div>Your city, your forecast, right now!</div>
+  <div>
+    <!-- binding to function (event binding) -->
+    <app-city-search (searchEvent)="doSearch($event)"></app-city-search>
+  </div>
   <mat-card>
-  <h2>Current Weather</h2>
-  <app-current-weather>Current Weather</app-current-weather>
+    <h2>Current Weather</h2>
+    <!-- property binding -->
+    <app-current-weather [current]="currentWeather"></app-current-weather>
   </mat-card>
 </div>
