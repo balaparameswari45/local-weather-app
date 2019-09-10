@@ -55,7 +55,7 @@ export class WeatherService {
         }api.openweathermap.org/data/2.5/weather?${uriParams}&appid=${
         environment.appId
         }`
-      )
+      ) //data is the ICurrentWeatherData we get from the API Call
       .pipe(map(data => this.transformToICurrentWeather(data)));
   }
 
